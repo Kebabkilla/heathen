@@ -1,0 +1,108 @@
+// Game: Quake 2
+// Format: Quake2
+// Original Heathen blockout. Texture is a placeholder, not yet supplied.
+{
+"classname" "worldspawn"
+"message" "Heathen camera test"
+"gravity" "800"
+{
+( -288 -288 -32 ) ( 288 288 -32 ) ( -288 288 -32 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 0 ) ( 288 288 0 ) ( 288 -288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 -32 ) ( -288 288 0 ) ( -288 -288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 288 -288 -32 ) ( 288 288 0 ) ( 288 288 -32 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 -32 ) ( 288 -288 0 ) ( 288 -288 -32 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 288 -32 ) ( 288 288 0 ) ( -288 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+{
+( -288 -288 256 ) ( 288 288 256 ) ( -288 288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 288 ) ( 288 288 288 ) ( 288 -288 288 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 256 ) ( -288 288 288 ) ( -288 -288 288 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 288 -288 256 ) ( 288 288 288 ) ( 288 288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 256 ) ( 288 -288 288 ) ( 288 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 288 256 ) ( 288 288 288 ) ( -288 288 288 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+{
+( -288 -288 0 ) ( -256 288 0 ) ( -288 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 256 ) ( -256 288 256 ) ( -256 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 0 ) ( -288 288 256 ) ( -288 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 -288 0 ) ( -256 288 256 ) ( -256 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 -288 0 ) ( -256 -288 256 ) ( -256 -288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -288 288 0 ) ( -256 288 256 ) ( -288 288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+{
+( 256 -288 0 ) ( 288 288 0 ) ( 256 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 256 -288 256 ) ( 288 288 256 ) ( 288 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 256 -288 0 ) ( 256 288 256 ) ( 256 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 288 -288 0 ) ( 288 288 256 ) ( 288 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 256 -288 0 ) ( 288 -288 256 ) ( 288 -288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 256 288 0 ) ( 288 288 256 ) ( 256 288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+{
+( -256 -288 0 ) ( 256 -256 0 ) ( -256 -256 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 -288 256 ) ( 256 -256 256 ) ( 256 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 -288 0 ) ( -256 -256 256 ) ( -256 -288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 256 -288 0 ) ( 256 -256 256 ) ( 256 -256 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 -288 0 ) ( 256 -288 256 ) ( 256 -288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 -256 0 ) ( 256 -256 256 ) ( -256 -256 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+{
+( -256 256 0 ) ( 256 288 0 ) ( -256 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 256 256 ) ( 256 288 256 ) ( 256 256 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 256 0 ) ( -256 288 256 ) ( -256 256 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 256 256 0 ) ( 256 288 256 ) ( 256 288 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 256 0 ) ( 256 256 256 ) ( 256 256 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( -256 288 0 ) ( 256 288 256 ) ( -256 288 256 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+{
+( 32 32 0 ) ( 128 128 0 ) ( 32 128 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 32 32 192 ) ( 128 128 192 ) ( 128 32 192 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 32 32 0 ) ( 32 128 192 ) ( 32 32 192 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 128 32 0 ) ( 128 128 192 ) ( 128 128 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 32 32 0 ) ( 128 32 192 ) ( 128 32 0 ) heathen/blockout 0 0 0 1 1 1 0 0
+( 32 128 0 ) ( 128 128 192 ) ( 32 128 192 ) heathen/blockout 0 0 0 1 1 1 0 0
+}
+}
+{
+"classname" "info_player_start"
+"origin" "0 -160 24"
+"angle" "90"
+}
+{
+"classname" "info_player_coop"
+"origin" "-64 -160 24"
+"angle" "90"
+}
+{
+"classname" "info_player_coop"
+"origin" "64 -160 24"
+"angle" "90"
+}
+{
+"classname" "info_player_coop"
+"origin" "128 -160 24"
+"angle" "90"
+}
+{
+"classname" "light"
+"origin" "-160 -128 208"
+"light" "350"
+"_color" "1 1 1"
+}
+{
+"classname" "light"
+"origin" "160 -128 208"
+"light" "350"
+"_color" "1 1 1"
+}
+{
+"classname" "light"
+"origin" "-160 160 208"
+"light" "350"
+"_color" "1 1 1"
+}
+{
+"classname" "light"
+"origin" "160 160 208"
+"light" "350"
+"_color" "1 1 1"
+}
