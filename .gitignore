@@ -1,0 +1,31 @@
+/subprojects/*/
+!/subprojects/packagefiles/
+/tags
+/TAGS
+
+# Out-of-tree builds and local tooling.
+/build/
+/builddir/
+/build-*/
+/.venv/
+
+# Compiled binaries and compiler output.
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.obj
+*.o
+*.a
+*.lib
+*.exp
+*.ilk
+
+# Generated map and diagnostic output; keep .map sources tracked.
+*.bsp
+*.lit
+*.lux
+*.prt
+*.pts
+*.log
