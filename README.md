@@ -17,6 +17,8 @@ for the engine/game license.
 
 Start with the [Windows TrenchBroom guide](doc/trenchbroom.md). The repository
 includes a minimal [game.fgd](game.fgd) and an original
-[test-room source](mygame/maps/tpp_test.map). This is an editor-only blockout
-checkpoint: textures, map compilation, and standalone runtime assets are not
-configured yet.
+[test-room source](mygame/maps/tpp_test.map). Then follow the
+[original blockout assets and map compilation guide](doc/map-compilation.md)
+to generate the texture/palette and build the room with ericw-tools. Generated
+assets and compiler output are ignored; only their source tools are tracked.
+A complete standalone runtime asset set is not configured yet.

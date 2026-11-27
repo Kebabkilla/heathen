@@ -117,18 +117,16 @@ expected; malformed brushes, unknown FGD syntax, or missing `game.fgd` are not.
 Send a screenshot of the editor or any unexpected error. This repository has
 not yet been GUI-tested in your TrenchBroom version.
 
-## Next checkpoint (not configured here)
+## Next checkpoint: assets and map compilation
 
-1. Provide original/licensed WAL textures and a palette, shared consistently
-   between the editor, map compiler, and engine.
-2. Install an ericw-tools build with Quake II support; configure `qbsp -q2`,
-   `vis`, and `light`, with generated output outside tracked sources.
-3. Resolve original engine/game startup asset requirements (palette, font,
-   player model, precaches, and other required resources).
-4. Stage the compiled map, game DLL, configuration, and original assets in a
-   defined runtime folder and test-launch it.
+Once the room and its definitions are open, follow
+[Original blockout assets and first map compilation](map-compilation.md).
+That guide generates the missing texture/palette and provides a fail-fast
+command-line compiler script for ericw-tools 2.0.0-alpha11. Its Quake II option
+is `-q2bsp` (not the earlier shorthand `-q2`). No engine rebuild is needed.
 
-Do not set up a compile/run profile or try launching `tpp_test` in Q2PRO yet:
-there is no BSP or complete standalone asset set. Compiled `.bsp`, `.prt`,
-`.pts`, and diagnostic `.log` files stay ignored. The `.map` and `game.fgd`
-remain source-controlled.
+After a successful compile we still need to resolve original engine/game
+startup requirements (font, player model, precaches, and other resources),
+then stage a defined runtime folder and test-launch it. Do not launch
+`tpp_test` in Q2PRO yet. Compiled output stays ignored; `.map` sources and
+`game.fgd` remain source-controlled.
