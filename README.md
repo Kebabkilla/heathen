@@ -21,4 +21,7 @@ includes a minimal [game.fgd](game.fgd) and an original
 [original blockout assets and map compilation guide](doc/map-compilation.md)
 to generate the texture/palette and build the room with ericw-tools. Generated
 assets and compiler output are ignored; only their source tools are tracked.
-A complete standalone runtime asset set is not configured yet.
+For the next diagnostic step, see [First standalone Windows launch](doc/first-launch.md):
+original font/player placeholders and a fresh ignored runtime staging folder.
+Actual Windows startup and movement require manual verification; this is not
+a production-ready runtime asset set or a verified third-person/co-op feature.

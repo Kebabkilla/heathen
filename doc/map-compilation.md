@@ -106,10 +106,13 @@ result as successful **only if the script prints SUCCESS and returns zero**.
 After a failed VIS or LIGHT stage, a partial BSP can still exist; it is not a
 completed level. If a stage fails, send its log and do not proceed to launch.
 
-No game files are deployed by the script. Do not copy the BSP into `build` or
-create a launch profile yet: standalone runtime staging and remaining assets
-are not ready. A successful compile verifies map processing, not in-game
-collision, camera behavior, or co-op.
+No game files are deployed by the compiler script. It now writes a
+`build-success.json` receipt containing hashes of the successfully processed
+map copy and BSP, and invalidates that receipt when starting a new compile.
+After a successful compile, follow [First standalone Windows launch](first-launch.md)
+for isolated runtime staging; do not manually mix files into the engine build.
+A successful compile verifies map processing, not in-game collision, camera
+behavior, or co-op.
 
 ## TrenchBroom integration comes after the first successful compile
 
@@ -133,6 +136,8 @@ behavior. Compiler execution is mocked in unit tests; it is not an actual
 QBSP/VIS/LIGHT run.
 
 The agent sandbox could not retrieve the Linux compiler release because its
-release-asset download host was inaccessible. The real compiler run and editor
-palette/texture reload therefore require verification on Windows. No successful
-map compile or GUI test is claimed by these scripts/tests alone.
+release-asset download host was inaccessible. Subsequently, the user supplied
+Windows screenshots confirming a successful real QBSP/VIS/LIGHT run and a
+textured TrenchBroom room with `mygame` enabled. That verifies the earlier map
+pipeline checkpoint, not the subsequent first-launch runtime or the new receipt
+logic. No successful in-game test is claimed by these unit tests alone.

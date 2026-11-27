@@ -5,6 +5,8 @@ shell. The editable source and its TrenchBroom settings are never modified.
 """
 
 import argparse
+import hashlib
+import json
 import os
 from pathlib import Path
 import shutil
@@ -45,6 +47,8 @@ def build_map(tools_dir, root=ROOT):
     generate_assets(game_dir)
     work_dir = root / "build-maps" / "tpp_test"
     work_dir.mkdir(parents=True, exist_ok=True)
+    receipt = work_dir / "build-success.json"
+    receipt.unlink(missing_ok=True)
     work_map = work_dir / source.name
     shutil.copyfile(source, work_map)
     bsp = work_map.with_suffix(".bsp")
@@ -70,8 +74,13 @@ def build_map(tools_dir, root=ROOT):
             raise RuntimeError("{} failed (exit {}). Read {}".format(
                 name, result.returncode, log))
         check_bsp(bsp)
+    receipt.write_text(json.dumps({
+        "schema": 1,
+        "map_sha256": hashlib.sha256(work_map.read_bytes()).hexdigest(),
+        "bsp_sha256": hashlib.sha256(bsp.read_bytes()).hexdigest(),
+    }, indent=2) + "\n", encoding="utf-8")
     print("SUCCESS:", bsp)
-    print("Map compilation only; standalone game startup is not configured yet.")
+    print("Map compilation only; use stage_runtime.py for the separate first-launch test.")
     return bsp
 
 

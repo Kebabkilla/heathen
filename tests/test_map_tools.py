@@ -1,5 +1,7 @@
 """Stdlib-only checks; real compiler/TrenchBroom checks are separate."""
 
+import hashlib
+import json
 import os
 from pathlib import Path
 import struct
@@ -111,6 +113,10 @@ class BuildTests(unittest.TestCase):
             self.assertEqual(command[command.index("-path") + 1], str(self.root / "mygame"))
         self.assertEqual(self.source.read_bytes(), before)
         self.assertEqual(self.bsp.with_suffix(".map").read_bytes(), before)
+        receipt = json.loads((self.bsp.parent / "build-success.json").read_text())
+        self.assertEqual(receipt, {"schema": 1,
+            "map_sha256": hashlib.sha256(before).hexdigest(),
+            "bsp_sha256": hashlib.sha256(self.bsp.read_bytes()).hexdigest()})
         for name in ("qbsp", "vis", "light"):
             self.assertEqual((self.bsp.parent / (name + ".log")).read_bytes(),
                              b"mock compiler output\n")
@@ -118,6 +124,9 @@ class BuildTests(unittest.TestCase):
     def test_failure_at_each_stage_stops_the_pipeline(self):
         for stage in range(3):
             with self.subTest(stage=stage):
+                self.bsp.parent.mkdir(parents=True, exist_ok=True)
+                receipt = self.bsp.parent / "build-success.json"
+                receipt.write_text('{"stale": true}')
                 calls = []
                 def run(command, **kwargs):
                     calls.append(command)
@@ -129,6 +138,7 @@ class BuildTests(unittest.TestCase):
                     with self.assertRaisesRegex(RuntimeError, "exit 7"):
                         build_test_map.build_map(self.tools, self.root)
                 self.assertEqual(len(calls), stage + 1)
+                self.assertFalse(receipt.exists())
 
     def test_success_exit_without_output_is_rejected(self):
         with patch.object(build_test_map.subprocess, "run",
