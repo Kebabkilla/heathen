@@ -1,0 +1,30 @@
+// Heathen editor blockout definitions, authored for this project.
+// Only a small subset of the existing bundled Quake II game is exposed.
+// No retail models or icons are required by these definitions.
+
+@SolidClass = worldspawn : "Heathen world"
+[
+    message(string) : "Level title" : "Heathen camera test"
+    gravity(integer) : "Gravity" : 800
+]
+
+@BaseClass size(-16 -16 -24, 16 16 32) = PlayerStart
+[
+    angle(integer) : "Facing yaw (degrees)" : 90
+    targetname(string) : "Spawn group (leave empty for default start)"
+]
+
+@PointClass base(PlayerStart) color(64 255 64) = info_player_start : "First player start"
+[
+]
+
+@PointClass base(PlayerStart) color(64 160 255) = info_player_coop : "Additional cooperative player start"
+[
+]
+
+// Static brightness/color are consumed by the map light compiler, not gameplay.
+@PointClass size(-8 -8 -8, 8 8 8) color(255 224 96) = light : "Static point light"
+[
+    light(integer) : "Brightness" : 300
+    _color(string) : "RGB color (each component 0 to 1)" : "1 1 1"
+]

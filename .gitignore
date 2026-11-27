@@ -29,3 +29,10 @@
 *.prt
 *.pts
 *.log
+
+# Reproducible blockout assets (generated from tools/generate_blockout.py).
+/mygame/pics/colormap.pcx
+/mygame/textures/heathen/blockout.wal
+
+# Local Python bytecode from developer tools/tests.
+__pycache__/
